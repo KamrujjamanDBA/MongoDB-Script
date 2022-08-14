@@ -1,0 +1,41 @@
+
+*******************###########************************************************
+Author : Kamrujjaman Topu
+LinkIn: https://www.linkedin.com/in/kamrujjaman-cse/
+
+**********************#############*******************************************
+
+
+
+===============================Create Database :====================================
+
+use DATABASE_NAME
+
+use mymongodbTest
+
+switched to db mymongodbTest
+
+==============================delete database ==========================================
+>use mymongodbTest
+
+>switched to db mymongodbTest
+
+>db.dropDatabase()
+>{ "dropped" : "mymongodbTest", "ok" : 1 }
+>
+===================================Create collection =========================
+The createCollection() Method
+
+db.createCollection(name, options)
+
+
+================================Drop collection===============================
+Syntax:
+
+db.COLLECTION_NAME.drop()  
+
+db.empDetails.drop()  
+
+Opuput:
+
+True

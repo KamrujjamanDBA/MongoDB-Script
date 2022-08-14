@@ -1,0 +1,149 @@
+
+*******************###########************************************************
+Author : Kamrujjaman Topu
+LinkIn: https://www.linkedin.com/in/kamrujjaman-cse/
+
+**********************#############*******************************************
+
+
+--=============== CRUD = Create, Read, Update, Delete ======================================
+
+
+- Create data- inserting data to user collection example
+
+>db.COLLECTION_NAME.insert(document)
+
+  // insertOne()
+   db.users.insertOne({name : "Kamrujjaman",age : 27,languages: ["bangla", "english"]})
+
+  // insertMany()
+   db.users.insertMany([{name : "Kamrujjaman",age : 27,languages: ["urdu", "bangla"]}, {name : "Sanzida Rahman",age : 23,languages: ["hindi", "bangla"]}])
+
+  ```
+
+- Read / Find data
+
+  - read data syntax: `db.collectionName.find()`
+  - read data in an easy way syntax: `db.collectionName.find().pretty()`
+  - read a specific data syntax: `db.collectionName.find({field: fieldValue})`
+    - example: `db.users.find({name: "Kamrujjaman"})`
+  - limit data syntax: `db.collectionName.find({field: fieldValue}).limit(NumberOfRows)`
+    - example: `db.users.find({age: 31}).limit(2)`
+
+- Update Data
+
+  - update data syntax: `db.collectionName.update(selection_item, update_data)`
+  - update data syntax: `db.collectionName.updateOne(selection_item, update_data)`
+  - update data syntax: `db.collectionName.updateMany(selection_item, update_data)`
+  - find one and update data syntax: `db.collectionName.findOneAndUpdate(selection_item, update_data)`
+  - example: `db.users.update({name:"Kamrujjaman"},{$set:{age:32}})`
+
+- Delete data
+
+  - delete data syntax: `db.collectionName.deleteOne(selection)
+    - example: `db.users.deleteOne({name:"Kamrujjaman"})`
+  - delete data syntax: `db.collectionName.deleteOne()
+  - delete many data syntax: `db.collectionName.deleteMany({selected_item})
+  - delete many data syntax: `db.collectionName.deleteMany({})
+
+  **********************************************&&&&&&&&&&&&&&&&**********************************************************
+  
+  ==============Data select :====================================
+
+The find() Method:
+
+> db.COLLECTION_NAME.find()
+
+>db.empDetails.find()
+
+> db.empDetails.find().count()
+
+--------selection count -------------
+
+> db.movie.find().count()
+
+-------limit row/documents------------
+> db.empDetails.find().limit(2)
+
+--------Data shoeting (Asc/Desc )-----------
+
+The sort() Method
+
+>db.COLLECTION_NAME.find().sort({KEY:1})
+
+Note : 1 is used for ascending order while -1 is used for descending order.
+
+> db.empDetails.find({},{"First_Name":1,_id:0}).sort({"First_Name":-1})
+
+
+=============Data insert :====================================
+
+The insert() Method:
+
+>db.COLLECTION_NAME.insert(document)
+
+-------------One raw insert -----------------------------
+db.empDetails.insertOne(
+	{
+		First_Name: "Radhika",
+		Last_Name: "Sharma",
+		Date_Of_Birth: "1995-09-26",
+		e_mail: "radhika_sharma.123@gmail.com",
+		phone: "9848022338"
+	})
+	
+	
+	-------------------multiple row insert ----------------------------
+	db.empDetails.insertMany(
+	[
+		{
+			First_Name: "Radhika",
+			Last_Name: "Sharma",
+			Date_Of_Birth: "1995-09-26",
+			e_mail: "radhika_sharma.123@gmail.com",
+			phone: "9000012345"
+		},
+		{
+			First_Name: "Rachel",
+			Last_Name: "Christopher",
+			Date_Of_Birth: "1990-02-16",
+			e_mail: "Rachel_Christopher.123@gmail.com",
+			phone: "9000054321"
+		},
+		{
+			First_Name: "Fathima",
+			Last_Name: "Sheik",
+			Date_Of_Birth: "1990-02-16",
+			e_mail: "Fathima_Sheik.123@gmail.com",
+			phone: "9000054321"
+		}
+	]
+)
+
+
+
+====================Data update ======================================
+
+MongoDB Update() Method
+
+>db.COLLECTION_NAME.update(SELECTION_CRITERIA, UPDATED_DATA)
+
+db.empDetails.update({'phone':'9000012345'},{$set:{'First_Name':'Topu'}})
+
+
+Output:
+
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+
+==================Data delete ==============================================
+
+The remove() Method
+
+>db.COLLECTION_NAME.remove(DELLETION_CRITTERIA)
+
+db.empDetails.remove({'First_Name':'Topu'})
+
+Output: 
+
+WriteResult({"nRemoved" : 1})

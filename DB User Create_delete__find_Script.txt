@@ -1,0 +1,61 @@
+
+*******************###########************************************************
+Author : Kamrujjaman Topu
+LinkIn: https://www.linkedin.com/in/kamrujjaman-cse/
+
+**********************#############*******************************************
+
+
+==========================User create,delete & find ===========================================
+
+---------1st user ---------------
+
+db.createUser(
+{	user: "Topu",
+	pwd: "31349",
+
+	roles:[{role: "userAdminAnyDatabase" , db:"admin"}]})
+	
+	
+----2nd user----------------
+
+	db.createUser(
+{
+	user: "Employeeadmin",
+
+	pwd: "31349",
+
+	roles:[{role: "userAdmin" , db:"admin"}]})
+	
+	----3nd user----------------
+	
+db.createUser(
+{
+	user: "TopuReadWriteUser",
+
+	pwd: "31349",
+
+	roles:[
+	{
+		role: "read" , db:"mymongodbTest"},
+    {
+		role: "readWrite" , db:"mymongodbTest"}
+	
+		  ]
+})
+
+------------find user list----------------------
+> use admin
+> db.system.users.find().pretty()
+
+---shpow previliage -----------
+
+db.getUser("Topu",
+{
+    showPrivileges: true,
+})
+
+------------Delete User ----------------
+
+use admin
+db.dropUser("Employeeadmin")

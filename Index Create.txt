@@ -1,0 +1,15 @@
+*******************###########************************************************
+Author : Kamrujjaman Topu
+LinkIn: https://www.linkedin.com/in/kamrujjaman-cse/
+
+**********************#############*******************************************
+
+=====================Create index===========================================
+
+The createIndex() Method
+
+>db.COLLECTION_NAME.createIndex({KEY:1})
+
+Note: Here key is the name of the field on which you want to create index and 1 is for ascending order. To create index in descending order you need to use -1.
+
+>db.mycol.createIndex({"Name":1,"Roll":-1})

@@ -1,0 +1,31 @@
+*******************###########************************************************
+Author : Kamrujjaman Topu
+LinkIn: https://www.linkedin.com/in/kamrujjaman-cse/
+
+**********************#############*******************************************
+
+
+MongoDB 6 community edition installation
+---------------------------------------
+1. install gnupg, sometimes it's already installed.
+CMD:sudo apt-get update AND
+sudo apt-get install gnupg
+2. importing public key
+CMD:wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
+3. Create a list file for MongoDB
+CMD:echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+4. update local packages
+CMD:sudo apt-get update
+5. Install the MongoDB packages
+CMD:sudo apt-get install -y mongodb-org OR
+sudo apt-get install -y mongodb-org=6.0.0 mongodb-org-database=6.0.0 mongodb-org-server=6.0.0 mongodb-mongosh=6.0.0 mongodb-org-mongos=6.0.0 mongodb-org-tools=6.0.0
+6. Default data directory- /var/lib/mongodb, Log directory- /var/log/mongodb, Config file- /etc/mongod.conf
+7. Administative commands
+CMD: Start MongoDB- sudo systemctl start mongod
+     Stop mongoDB- sudo systemctl stop mongod
+     Restart mongoDB- sudo systemctl restart mongod
+     Check Status- sudo systemctl status mongod
+8. register mongodb to start when machine start/reboot
+CMD: sudo systemctl enable mongod
+9. Remote connection for mongoDB, edit mongod.conf file, go "network interfaces" then add bindIp: 127.0.0.1,mongodb_srv_ip, finally restart service
+
