@@ -7,6 +7,13 @@ LinkIn: https://www.linkedin.com/in/kamrujjaman-cse/
 
 Installing MongoDB on CentOS:
 
+Installation Summary: 
+Step 1: Importing MongoDB Repositories
+Step 2: Installing MongoDB Packages
+Step 3: Launching MongoDB as a Service on Ubuntu
+
+
+
 Step 1: Add the MongoDB Software Repository
 --------Import Repository -----------
 cmd:   sudo nano /etc/yum.repos.d/mongodb-org-4.2.repo
