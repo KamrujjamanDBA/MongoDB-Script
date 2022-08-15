@@ -6,12 +6,15 @@ LinkIn: https://www.linkedin.com/in/kamrujjaman-cse/
 **********************#############*******************************************
 
 
-Uninstall MongoDB Community Edition
-------------------------------------
-1. Stop MongoDB
-CMD: sudo service mongod stop
+Uninstall MongoDB from Centos
+------------------------------
+
+1. Stop MongoDB Services
+Cmd:   sudo service mongod stop
+
 2. Remove Packages
-CMD: sudo apt-get purge mongodb-org*
+Cmd:  sudo apt-get purge mongodb-org*
+
 3.Remove Data Directories
-CMD:sudo rm -r /var/log/mongodb
-sudo rm -r /var/lib/mongodb
+Cmd:  sudo rm -r /var/log/mongodb
+      sudo rm -r /var/lib/mongodb
